@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+/* Twin Rivers Resort Tigoni - Nature/Green Theme Design System */
+
+@layer base {
+  :root {
+    /* Nature-inspired color palette */
+    --background: 75 50% 95%;
+    --foreground: 120 30% 15%;
+
+    --card: 75 40% 92%;
+    --card-foreground: 120 30% 15%;
+
+    --popover: 75 40% 92%;
+    --popover-foreground: 120 30% 15%;
+
+    /* Primary - Rich Forest Green */
+    --primary: 120 40% 30%;
+    --primary-foreground: 75 50% 95%;
+
+    /* Secondary - Warm Earth Brown */
+    --secondary: 30 40% 35%;
+    --secondary-foreground: 45 60% 96%;
+
+    /* Muted - Soft Sage */
+    --muted: 90 25% 85%;
+    --muted-foreground: 120 15% 40%;
+
+    /* Accent - Lime/Chartreuse */
+    --accent: 75 60% 50%;
+    --accent-foreground: 120 40% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 90 30% 75%;
+    --input: 90 30% 80%;
+    --ring: 120 40% 30%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --nature-light: 75 55% 85%;
+    --nature-medium: 90 45% 70%;
+    --nature-dark: 120 35% 25%;
+    --earth-warm: 35 50% 45%;
+    --earth-light: 40 45% 90%;
+
+    /* Gradients */
+    --gradient-nature: linear-gradient(180deg, hsl(75 55% 85%) 0%, hsl(90 45% 75%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(75 50% 88%) 0%, hsl(90 40% 80%) 50%, hsl(75 55% 85%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(120 30% 20% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(120 30% 20% / 0.2);
+
+    --sidebar-background: 75 40% 92%;
+    --sidebar-foreground: 120 30% 15%;
+    --sidebar-primary: 120 40% 30%;
+    --sidebar-primary-foreground: 75 50% 95%;
+    --sidebar-accent: 90 25% 85%;
+    --sidebar-accent-foreground: 120 40% 15%;
+    --sidebar-border: 90 30% 75%;
+    --sidebar-ring: 120 40% 30%;
+  }
+
+  .dark {
+    --background: 120 25% 10%;
+    --foreground: 75 40% 92%;
+
+    --card: 120 20% 15%;
+    --card-foreground: 75 40% 92%;
+
+    --popover: 120 20% 15%;
+    --popover-foreground: 75 40% 92%;
+
+    --primary: 90 50% 55%;
+    --primary-foreground: 120 30% 10%;
+
+    --secondary: 35 35% 30%;
+    --secondary-foreground: 45 50% 90%;
+
+    --muted: 120 15% 20%;
+    --muted-foreground: 90 20% 65%;
+
+    --accent: 75 45% 45%;
+    --accent-foreground: 120 30% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 15% 25%;
+    --input: 120 15% 25%;
+    --ring: 90 50% 55%;
+
+    --nature-light: 120 20% 20%;
+    --nature-medium: 100 25% 35%;
+    --nature-dark: 120 30% 15%;
+    --earth-warm: 35 40% 35%;
+    --earth-light: 40 30% 20%;
+
+    --sidebar-background: 120 20% 12%;
+    --sidebar-foreground: 75 40% 92%;
+    --sidebar-primary: 90 50% 55%;
+    --sidebar-primary-foreground: 120 30% 10%;
+    --sidebar-accent: 120 15% 20%;
+    --sidebar-accent-foreground: 75 40% 92%;
+    --sidebar-border: 120 15% 25%;
+    --sidebar-ring: 90 50% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-nature {
+    background: var(--gradient-nature);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
